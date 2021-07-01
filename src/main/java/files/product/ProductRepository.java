@@ -15,7 +15,8 @@ public class ProductRepository {
     public ProductRepository() {
         productList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            productList.add(new Product(i));
+            productList.add(Product.getProduct(i));
+//            productList.add(new Product(i)); старая реализация
         }
     }
 
