@@ -1,17 +1,23 @@
 package files.product;
 
-import org.apache.commons.lang3.RandomStringUtils;
-
 public class Product {
 
+    private static Product product;
     private int id;
     private String name;
     private float price;
 
-    public Product(int id) {
+    private Product(int id) {
         this.id = id;
-        name = RandomStringUtils.random(5, true, false);
-        price = (float) (Math.random()*50);
+        name = "Product_Test";
+        price = (float) 25.65;
+    }
+
+    public static Product getProduct(int id) {
+        if (product == null) {
+            product = new Product(id);
+        }
+        return product;
     }
 
     public void setId(int id) {
